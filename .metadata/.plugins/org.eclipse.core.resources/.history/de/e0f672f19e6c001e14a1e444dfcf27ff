@@ -113,7 +113,7 @@ public class DBConnection {
 			PreparedStatement selectState = con.prepareStatement(selectQuery);
 			
 			//여기에 원하는 조건의 account_id 설정.
-			int targetAID = 1;
+			int targetAID = 2;
 			
 			//조건 설정
 			selectState.setInt(1, targetAID);

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;chap01_DB_ORACLE/설명작성란/SELECT-While.txt&apos; to &apos;SELECT - While.txt&apos;" description="Rename resource &apos;SELECT-While.txt&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="설명작성란/SELECT-While.txt" name="SELECT - While.txt" stamp="1697511682780" updateReferences="true"/>
+</session>

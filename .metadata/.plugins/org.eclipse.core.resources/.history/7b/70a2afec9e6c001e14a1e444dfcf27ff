@@ -127,6 +127,7 @@ public class DBConnection {
 				String d = result.getString("balance");
 				String e = result.getString("branch_name");
 				String f = result.getString("last_transaction_date");
+				
 				System.out.println("ACCOUNT_ID : " + a);
 				System.out.println("ACCOUNT_NUMBER : " + b);
 				System.out.println("ACCOUNT_NAME : " + c);
