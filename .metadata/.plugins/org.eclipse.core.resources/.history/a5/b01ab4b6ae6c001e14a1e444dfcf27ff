@@ -112,14 +112,15 @@ public class DBConnection {
 			String selectQuery = "SELECT * FROM BANK WHERE account_number in(?, ?)";
 			PreparedStatement selectState = con.prepareStatement(selectQuery);
 			
-			String[] targetAN = {"1234567890", "5555666777"};
+			String [] targetAN = {"1234567890", "5555666777"};
 			selectState.setString(1, targetAN[0]);
 			selectState.setString(2, targetAN[1]);
 			
-//			//여기에 원하는 조건의 account_id 설정.
-//			int targetAID = 1;
-//			//조건 설정
-//			selectState.setInt(1, targetAID);
+			//여기에 원하는 조건의 account_id 설정.
+			int targetAID = 0;
+			
+			//조건 설정
+			selectState.setInt(0, targetAID);
 			
 			ResultSet result = selectState.executeQuery();
 			

@@ -114,7 +114,6 @@ public class DBConnection {
 			
 			String[] targetAN = {"1234567890", "5555666777"};
 			selectState.setString(1, targetAN[0]);
-			selectState.setString(2, targetAN[1]);
 			
 //			//여기에 원하는 조건의 account_id 설정.
 //			int targetAID = 1;

@@ -112,18 +112,19 @@ public class DBConnection {
 			String selectQuery = "SELECT * FROM BANK WHERE account_number in(?, ?)";
 			PreparedStatement selectState = con.prepareStatement(selectQuery);
 			
-			String[] targetAN = {"1234567890", "5555666777"};
+			String [] targetAN = {"1234567890", "5555666777"};
 			selectState.setString(1, targetAN[0]);
 			selectState.setString(2, targetAN[1]);
 			
-//			//여기에 원하는 조건의 account_id 설정.
-//			int targetAID = 1;
-//			//조건 설정
-//			selectState.setInt(1, targetAID);
+			//여기에 원하는 조건의 account_id 설정.
+			int targetAID = 1;
+			
+			//조건 설정
+			selectState.setInt(1, targetAID);
 			
 			ResultSet result = selectState.executeQuery();
 			
-			if(result.next()) {
+			while(result.next()) {
 				int a = result.getInt("account_id");
 				String b = result.getString("account_number");
 				String c = result.getString("account_name");
@@ -137,9 +138,7 @@ public class DBConnection {
 				System.out.println("BRANCH_NAME : " + e);
 				System.out.println("LAST_TRANSACTION_DATE : " + f);
 				
-			} else {
-				System.out.println("조건에 해당하는 데이터가 없습니다.");
-			}
+			} 
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
