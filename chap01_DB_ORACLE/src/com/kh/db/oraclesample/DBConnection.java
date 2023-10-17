@@ -12,7 +12,8 @@ public class DBConnection { // Java 클래스를 정의합니다.
 	public static void main(String[] args) { //main프로그램을 실행할 때 메소드가 실행됩니다 .
 		//selectBank();
 		//selectKhcafe();
-		selectIf(); //프로그램이 실행될 때 다른 메서드를 호출합니다. 이 경우 selectIf 메서드를 호출합니다.
+		//selectIf(); //프로그램이 실행될 때 다른 메서드를 호출합니다. 이 경우 selectIf 메서드를 호출합니다.
+		insertBank();
 	}
 	
 	static void selectBank() { //정적 메서드를 정의합니다
@@ -141,6 +142,29 @@ public class DBConnection { // Java 클래스를 정의합니다.
 				System.out.println("조건에 해당하는 데이터가 없습니다.");
 			}
 			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	static void insertBank() {
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String user = "KHBANK";
+		String password = "KH1234";
+		try {
+			Connection con = DriverManager.getConnection(url, user, password);
+			String insertQuery = "INSERT INTO BANK (account_id, account_number, account_name, balance, branch_name, last_transaction_date)"
+								+ "VALUES(?, ?, ?, ?, ?, ?)";
+			PreparedStatement insertState = con.prepareStatement(insertQuery);
+			insertState.setInt(1, 13);
+			insertState.setString(2, "9876351");
+			insertState.setString(3, "안컴천");
+			insertState.setInt(4, 2240);
+			insertState.setString(5, "강남지점");
+			insertState.setDate(6, Date.valueOf("2023-10-16"));
+			
+			int rowsInsert = insertState.executeUpdate();
+			System.out.println(rowsInsert + " row 추가됨.");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
