@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class DBConnection {
 
 	public static void main(String[] args) {
-		selectBank();
+		//selectBank();
 		selectKhcafe();
 	}
 	
@@ -51,6 +51,7 @@ public class DBConnection {
 				System.out.println("BRANCH_NAME : " + branchName);
 				System.out.println("LAST_TRANSACTION_DATE : " + lastTransactionDate);
 			}
+		
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -90,6 +91,7 @@ public class DBConnection {
 				System.out.println("phone_number : " + phoneNum);
 				System.out.println("operating_hours : " + oHours);
 			}
+		
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
