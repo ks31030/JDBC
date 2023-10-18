@@ -1,4 +1,4 @@
-package com.kh.db.oraclesample;
+package com.kh.oracledb.CRUD;
 
 import java.sql.Connection; //데이터베이스 작업 및 SQL 처리에 필요한 Java 클래스를 java.sql및 패키지에서 가져옵니다.
 import java.sql.Date;
@@ -7,16 +7,15 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class DBConnection { // Java 클래스를 정의합니다.
+public class selectSample { // Java 클래스를 정의합니다.
 
 	public static void main(String[] args) { //main프로그램을 실행할 때 메소드가 실행됩니다 .
-		//selectBank();
+		//selectAll();
 		//selectKhcafe();
-		//selectIf(); //프로그램이 실행될 때 다른 메서드를 호출합니다. 이 경우 selectIf 메서드를 호출합니다.
-		insertBank();
+		//selectOne(); //프로그램이 실행될 때 다른 메서드를 호출합니다. 이 경우 selectIf 메서드를 호출합니다.
 	}
 	
-	static void selectBank() { //정적 메서드를 정의합니다
+	static void selectAll() { //정적 메서드를 정의합니다
 		//1. 드라이버 연결 : Oracle JDBC 드라이버 클래스 이름
 		String driver = "oracle.jdbc.driver.OracleDriver";
 		//2. 오라클 내 컴퓨터 연결 : 데이터베이스 연결정보
@@ -54,7 +53,6 @@ public class DBConnection { // Java 클래스를 정의합니다.
 				System.out.println("BRANCH_NAME : " + branchName);
 				System.out.println("LAST_TRANSACTION_DATE : " + lastTransactionDate);
 			}
-			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -95,13 +93,12 @@ public class DBConnection { // Java 클래스를 정의합니다.
 				System.out.println("phone_number : " + phoneNum);
 				System.out.println("operating_hours : " + oHours);
 			}
-			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	static void selectIf() {
+	static void selectOne() {
 		String driver = "oracle.jdbc.driver.OracleDriver";
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
 		String user = "KHBANK";
@@ -137,34 +134,9 @@ public class DBConnection { // Java 클래스를 정의합니다.
 				System.out.println("BALANCE : " + d);
 				System.out.println("BRANCH_NAME : " + e);
 				System.out.println("LAST_TRANSACTION_DATE : " + f);
-				
 			} else {
 				System.out.println("조건에 해당하는 데이터가 없습니다.");
-			}
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	static void insertBank() {
-		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		String user = "KHBANK";
-		String password = "KH1234";
-		try {
-			Connection con = DriverManager.getConnection(url, user, password);
-			String insertQuery = "INSERT INTO BANK (account_id, account_number, account_name, balance, branch_name, last_transaction_date)"
-								+ "VALUES(?, ?, ?, ?, ?, ?)";
-			PreparedStatement insertState = con.prepareStatement(insertQuery);
-			insertState.setInt(1, 13);
-			insertState.setString(2, "9876351");
-			insertState.setString(3, "안컴천");
-			insertState.setInt(4, 2240);
-			insertState.setString(5, "강남지점");
-			insertState.setDate(6, Date.valueOf("2023-10-16"));
-			
-			int rowsInsert = insertState.executeUpdate();
-			System.out.println(rowsInsert + " row 추가됨.");
+			}	
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
