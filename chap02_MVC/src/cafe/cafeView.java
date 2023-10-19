@@ -9,12 +9,12 @@ public class cafeView {
 	public cafeView(cafeModel model) {
 		this.model = model;
 	}
-	//cname, address, phone_number, operating_hours
+	//name, address, phone_number, operating_hours
 	public void addCafeName() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("카페 정보를 입력하세요.");
 		System.out.print("상호명 : ");
-		String cname = sc.nextLine();
+		String name = sc.nextLine();
 		System.out.print("주소 : ");
 		String address = sc.nextLine();
 		System.out.print("전화번호 : ");
@@ -22,7 +22,7 @@ public class cafeView {
 		System.out.print("운영시간 : ");
 		String operating_hours = sc.nextLine();
 		//카페 모델에서 insertCafe 라는 메서드를 가지고 와야 함.
-		model.insertCafe(cname, address, phone_number, operating_hours);
+		model.insertCafe(name, address, phone_number, operating_hours);
 		System.out.println("카페가 성공적으로 추가되었습니다.");
 	}
 	public void updateCafe() {
@@ -75,7 +75,7 @@ public class cafeView {
 		System.out.print("가격 : ");
 		double price = sc.nextDouble();
 		System.out.print("설명 : ");
-		String description = sc.nextLine();
+		String description = sc.next();
 		model.insertMenu(menu_id, cafe_id, menu_name, price, description);
 		System.out.println("메뉴가 성공적으로 추가되었습니다.");
 	}

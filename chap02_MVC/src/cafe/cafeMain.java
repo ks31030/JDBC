@@ -7,11 +7,12 @@ public class cafeMain {
 		cafeView view = new cafeView(model);
 		//controller
 		cafeController controller = new cafeController(model, view);
+		controller.run();
 //		view.addCafeName();
 //		view.updateMenu();
 //		view.updateCafe();
 //		view.deleteCafe();
 //		view.deleteMenu();
-		view.insertMenu();
+//		view.insertMenu();
 	}
 }

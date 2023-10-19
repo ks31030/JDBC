@@ -9,13 +9,13 @@ public class cafeModel {
 	String url = "jdbc:oracle:thin:@localhost:1521:xe";
 	String userName = "KHCAFE";
 	String password = "KH1234";
-	public void insertCafe(String cname, String address, String phone_number, String operating_hours) {
+	public void insertCafe(String name, String address, String phone_number, String operating_hours) {
 		try {
 			Connection con = DriverManager.getConnection(url, userName, password);
 			System.out.println("데이터베이스 연결 성공!");
-			String sql = "INSERT INTO CAFES(cname, address, phone_number, operating_hours)" + "VALUES(?, ?, ?, ?)";
+			String sql = "INSERT INTO CAFES(name, address, phone_number, operating_hours)" + "VALUES(?, ?, ?, ?)";
 			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setString(1, cname);
+			ps.setString(1, name);
 			ps.setString(2, address);
 			ps.setString(3, phone_number);
 			ps.setString(4, operating_hours);
