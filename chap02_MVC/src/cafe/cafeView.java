@@ -59,8 +59,24 @@ public class cafeView {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("메뉴를 삭제할게요.");
 		System.out.print("삭제요망 메뉴ID : ");
-		int menu_id = Integer.parseInt(sc.nextLine());//int를 문자로 입력하고자 할 때.
-		model.deleteCafe(menu_id);
+		int menu_id = Integer.parseInt(sc.nextLine());
+		model.deleteMenu(menu_id);
 		System.out.println("메뉴가 삭제되었습니다.");
+	}
+	public void insertMenu() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("메뉴를 추가합니다.");
+		System.out.print("메뉴ID : ");
+		int menu_id = sc.nextInt();
+		System.out.print("카페ID : ");
+		int cafe_id = sc.nextInt();
+		System.out.print("메뉴명 : ");
+		String menu_name = sc.next();
+		System.out.print("가격 : ");
+		double price = sc.nextDouble();
+		System.out.print("설명 : ");
+		String description = sc.nextLine();
+		model.insertMenu(menu_id, cafe_id, menu_name, price, description);
+		System.out.println("메뉴가 성공적으로 추가되었습니다.");
 	}
 }

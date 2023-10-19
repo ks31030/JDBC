@@ -11,6 +11,7 @@ public class cafeMain {
 //		view.updateMenu();
 //		view.updateCafe();
 //		view.deleteCafe();
-		view.deleteMenu();
+//		view.deleteMenu();
+		view.insertMenu();
 	}
 }
