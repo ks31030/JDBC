@@ -8,15 +8,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class productModel {
-	private Connection con;
-	public productModel(Connection con) {
-		this.con = con;
+	private Connection connection;
+	public productModel(Connection connection) {
+		this.connection = connection;
 	}
 	public List<productDTO> getProducts(){
 		List<productDTO> products = new ArrayList<>();
 		String query = "SELECT * FROM PRODUCTS";
 		try {
-			PreparedStatement st = con.prepareStatement(query);
+			PreparedStatement st = connection.prepareStatement(query);
 			ResultSet result = st.executeQuery();
 			while(result.next()) {
 				productDTO product = new productDTO();
@@ -32,6 +32,5 @@ public class productModel {
 			e.printStackTrace();
 		}
 		return products;
-
 	}
 }

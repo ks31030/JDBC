@@ -11,9 +11,9 @@ public class productMain {
 		String userName = "KHCAFE";
 		String password = "KH1234";
 		try {
-			Connection con = DriverManager.getConnection(url, userName, password);
+			Connection connection = DriverManager.getConnection(url, userName, password);
 			productView view = new productView();
-			productController controller = new productController(con, view);
+			productController controller = new productController(connection, view);
 			controller.displayAllProducts();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
