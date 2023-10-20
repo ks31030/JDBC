@@ -1,4 +1,4 @@
-package cafe;
+package com.kh.mvcCafe;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

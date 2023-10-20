@@ -1,4 +1,4 @@
-package cafe;
+package com.kh.mvcCafe;
 
 public class cafeMain {
 	
