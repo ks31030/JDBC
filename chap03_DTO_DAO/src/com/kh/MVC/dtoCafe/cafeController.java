@@ -1,4 +1,4 @@
-package com.kh.dtoCafe;
+package com.kh.MVC.dtoCafe;
 
 import java.sql.Connection;
 import java.util.List;

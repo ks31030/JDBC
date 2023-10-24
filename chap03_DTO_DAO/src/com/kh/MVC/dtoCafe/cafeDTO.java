@@ -1,4 +1,4 @@
-package com.kh.dtoCafe;
+package com.kh.MVC.dtoCafe;
 //CafeDTO : 데이터 전송 객체.
 public class cafeDTO {
 	//model SQL열 형식에 맞춰 데이터를 캡슐화하고 getter setter를 활용하여 데이터를 저장하고 내보내는 공간.

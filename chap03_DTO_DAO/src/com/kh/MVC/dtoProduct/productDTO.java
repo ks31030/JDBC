@@ -1,4 +1,4 @@
-package com.kh.dtoProduct;
+package com.kh.MVC.dtoProduct;
 
 public class productDTO {
 	//필드 멤버변수

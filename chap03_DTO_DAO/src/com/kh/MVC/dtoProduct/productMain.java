@@ -1,4 +1,4 @@
-package com.kh.dtoProduct;
+package com.kh.MVC.dtoProduct;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
