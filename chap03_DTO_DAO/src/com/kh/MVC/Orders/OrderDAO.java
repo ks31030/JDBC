@@ -41,7 +41,6 @@ public class OrderDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 		return orders;
 	}
 }

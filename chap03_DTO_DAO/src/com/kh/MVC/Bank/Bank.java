@@ -1,4 +1,4 @@
-package com.kh.MVC;
+package com.kh.MVC.Bank;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,23 +9,23 @@ import java.util.Scanner;
 public class Bank {
 	public static void main(String[] args) {
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		String name = "khbank";
-		String pw = "kh1234";
+		String name = "KHBANK";
+		String pw = "KH1234";
 		
 		try {
 			Connection c = DriverManager.getConnection(url, name, pw);
 			Scanner sc = new Scanner(System.in);
 			
-			System.out.println("Àü¼ÛÇÒ ID¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+			System.out.println("ê³„ì¢Œ ì…ë ¥í•˜ì„¸ìš” ");
 			int fromAccountId = sc.nextInt();
 			
-			System.out.println("Àü¼Û¹ŞÀ» ID¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä. : ");
+			System.out.println("ì „ì†¡ ê³„ì¢Œë¥¼ ì…ë ¥í•˜ì„¸ìš”. : ");
 			int toAccountId = sc.nextInt();
 			
-			System.out.println("Àü¼ÛÇÒ ±İ¾×À» ÀÔ·ÂÇÏ¼¼¿ä. : ");
+			System.out.println("ê°€ê²©ì„ ì…ë ¥í•˜ì„¸ìš”: ");
 			double amount = sc.nextDouble();
 			
-			c.setAutoCommit(false); //Æ®·£Àè¼Ç ½ÃÀÛ
+			c.setAutoCommit(false); 
 			PreparedStatement a = c.prepareStatement("UPDATE BANK SET balance = balance - ? Where account_id = ?");
 			a.setDouble(1, amount);
 			a.setInt(2, fromAccountId);
