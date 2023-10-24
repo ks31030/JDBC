@@ -37,10 +37,11 @@ public class Bank {
 			b.setInt(2, toAccountId);
 			b.executeUpdate();
 			c.commit();
+			
+			System.out.println(fromAccountId + "번 계좌로부터 " + toAccountId + "번 계좌로 " + amount + "달러가 이동되었습니다.");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
 }

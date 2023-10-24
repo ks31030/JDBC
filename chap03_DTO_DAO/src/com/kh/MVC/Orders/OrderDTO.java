@@ -6,13 +6,14 @@ ORDER_DATE
 QUANTITY
 TOTAL_PRICE*/
 public class OrderDTO {
+	//멤버변수
 	private int order_id;
 	private int cafe_id;
 	private int menu_id;
 	private String order_date;
 	private int quantity;
 	private double total_price;
-	
+	//생성자
 	public OrderDTO(int order_id, int cafe_id, int menu_id, String order_date, int quantity, double total_price) {
 		this.order_id = order_id;
 		this.cafe_id = cafe_id;
@@ -21,7 +22,7 @@ public class OrderDTO {
 		this.quantity = quantity;
 		this.total_price = total_price;
 	}
-
+	//Getter Setter
 	public int getOrder_id() {
 		return order_id;
 	}

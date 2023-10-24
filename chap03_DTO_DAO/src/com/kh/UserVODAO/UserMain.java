@@ -58,8 +58,8 @@ public class UserMain {
 	public void selectScanner() {
 		//1. DB 연결 URL, USERNAME, PASSWORD
 		String jdbcURL = "jdbc:oracle:thin:@localhost:1521:xe";
-		String dbUserName = "khcafe";
-		String dbPassWord = "kh1234";
+		String dbUserName = "KHCAFE";
+		String dbPassWord = "KH1234";
 		
 		try {
 		Connection cc = DriverManager.getConnection(jdbcURL, dbUserName, dbPassWord);
@@ -109,18 +109,28 @@ public class UserMain {
 				 } else {
 						System.out.println("일치하는 User Id와 email을 찾을 수 없습니다.");
 						System.out.println();
-				   }
-			  }
+				 }
+
+			}
+			
+			
 		}
+		
+		
+		
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+	
+
+
 	public void selectAll() {
 		//1. DB 연결 URL, USERNAME, PASSWORD
 		String jdbcURL = "jdbc:oracle:thin:@localhost:1521:xe";
 		String dbUserName = "khcafe";
 		String dbPassWord = "kh1234";
+		
 		try {
 			Connection connection = DriverManager.getConnection(jdbcURL, dbUserName, dbPassWord);
 			UserDAO userDAO = new UserDAO(connection);
@@ -133,11 +143,14 @@ public class UserMain {
 			System.out.println("User Email : " + u.getEmail());
 			System.out.println("Registration Date : "+u.getRegDate());
 			}
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
+	
+	
 	public void insertRun() {
 		String jdbcURL = "jdbc:oracle:thin:@localhost:1521:xe";
 		String dbUserName = "khcafe";
@@ -173,11 +186,17 @@ public class UserMain {
 			} else {						  //false
 				System.out.println("유저 등록에 실패하였습니다.");
 			}
+			
 			//연결 닫기
 			connection.close();
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		
+
 	}
+
 }

@@ -11,7 +11,5 @@ public class OrderMain {
 		OrderView view = new OrderView();
 		double totalPrice = controller.calculateTotalPrice(orders);
 		view.showTotalPrice(totalPrice);
-
 	}
-
 }
